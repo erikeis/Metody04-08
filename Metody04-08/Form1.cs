@@ -33,12 +33,28 @@ namespace Metody04_08
             return vypocet;
         }
 
+        public static int Faktorial(int cislo)
+        {
+            int vysledek = 1;
+            while (cislo > 0)
+            {
+                vysledek *= cislo;
+                --cislo;
+            }
+            return vysledek;
+        }
 
         private void mocnina_Click(object sender, EventArgs e)
         {
             int a = int.Parse(textBox1.Text);
             int b = int.Parse(textBox2.Text);
             MessageBox.Show(Mocnina(a, b).ToString());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int c = int.Parse(textBox3.Text);
+            MessageBox.Show(Faktorial(c).ToString());
         }
     }
 }
