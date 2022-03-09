@@ -44,6 +44,19 @@ namespace Metody04_08
             return vysledek;
         }
 
+        public static int CifLichSoucet(int cislo)
+        {
+            int cifra = 0;
+            int soucet = 0;
+            while (true)
+            {
+                cifra = cislo % 10;
+                if (cifra % 2 != 0) soucet += cifra;
+                cislo /= 10;
+            }
+            return soucet;
+        }
+
         private void mocnina_Click(object sender, EventArgs e)
         {
             int a = int.Parse(textBox1.Text);
@@ -55,6 +68,12 @@ namespace Metody04_08
         {
             int c = int.Parse(textBox3.Text);
             MessageBox.Show(Faktorial(c).ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int d = int.Parse(textBox4.Text);
+            MessageBox.Show(CifLichSoucet(d).ToString());
         }
     }
 }
