@@ -57,6 +57,18 @@ namespace Metody04_08
             return soucet;
         }
 
+        public static void JePrvocislo(int cislo)
+        {
+            int pocetDelitelu = 0;
+            bool j = false;
+            for (int i = 2; i < cislo; i++)
+            {
+                if (cislo % i == 0) j = true; 
+            }
+            if (j || cislo == 1) MessageBox.Show("Neni prvocislo.");
+            else MessageBox.Show("Je prvocislo.");
+        }
+
         private void mocnina_Click(object sender, EventArgs e)
         {
             int a = int.Parse(textBox1.Text);
@@ -74,6 +86,12 @@ namespace Metody04_08
         {
             int d = int.Parse(textBox4.Text);
             MessageBox.Show(CifLichSoucet(d).ToString());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int f = int.Parse(textBox5.Text);
+            JePrvocislo(f);
         }
     }
 }
