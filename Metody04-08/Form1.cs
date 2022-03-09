@@ -48,7 +48,7 @@ namespace Metody04_08
         {
             int cifra = 0;
             int soucet = 0;
-            while (true)
+            while (cislo > 0)
             {
                 cifra = cislo % 10;
                 if (cifra % 2 != 0) soucet += cifra;
@@ -67,6 +67,16 @@ namespace Metody04_08
             }
             if (j || cislo == 1) MessageBox.Show("Neni prvocislo.");
             else MessageBox.Show("Je prvocislo.");
+        }
+
+        public static int PocetDeliteluSud(int cislo)
+        {
+            int pocet = 0;
+            for (int i = 2; i <= cislo; i+=2)
+            {
+                if (cislo % i == 0) ++pocet;
+            }
+            return pocet;
         }
 
         private void mocnina_Click(object sender, EventArgs e)
@@ -92,6 +102,12 @@ namespace Metody04_08
         {
             int f = int.Parse(textBox5.Text);
             JePrvocislo(f);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int g = int.Parse(textBox6.Text);
+            MessageBox.Show(PocetDeliteluSud(g).ToString());
         }
     }
 }
