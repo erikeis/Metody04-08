@@ -109,5 +109,19 @@ namespace Metody04_08
             int g = int.Parse(textBox6.Text);
             MessageBox.Show(PocetDeliteluSud(g).ToString());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = int.Parse(textBox7.Text);
+            int b = int.Parse(textBox8.Text);
+            int max = a;
+            if (b > max) max = b;
+            int spolecnyDelitel = 1;
+            for (int i = 1; i < max; i++)
+            {
+                if (a % i == 0 && b % i == 0) spolecnyDelitel = i;
+            }
+            MessageBox.Show("Největší společný dělitel zadaných čísel je " + spolecnyDelitel);
+        }
     }
 }
